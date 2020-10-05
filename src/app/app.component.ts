@@ -24,6 +24,10 @@ export class AppComponent implements OnInit {
   pageIndex = 0;
   pageSize = 10;
 
+  get isDataLoaded(): boolean {
+    return this.searchResult?.items?.length > 0;
+  }
+
   constructor(private swUpdate: SwUpdate,
               private deviceService: DeviceDetectorService,
               private githubService: GithubService) {

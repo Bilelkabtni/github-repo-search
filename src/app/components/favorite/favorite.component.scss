@@ -1,6 +1,8 @@
+@import '../../../styles/variabels';
+
 .favorite {
   position: relative;
   right: 1rem;
   cursor: pointer;
-  color: #ffc107;
+  color: $yellow;
 }

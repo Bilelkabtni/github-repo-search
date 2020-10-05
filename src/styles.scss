@@ -1,6 +1,6 @@
 @import 'styles/variabels'; // colors variable
-@import 'styles/helpers'; // shared style
 @import 'styles/layouts/material'; // reset mat style
+@import 'styles/helpers'; // shared style
 @import 'styles/layouts/card'; // card design
 
 html, body { height: 100%; }
@@ -13,16 +13,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: h
   height: 100%;
   padding: 0 2rem;
   overflow: auto;
-  @media (max-width: 800px) {
+  @media (max-width: $mobile-break-point) {
      padding: 0 !important;
   }
 }
 
 .mat-table {
-  background-color: #deeffd;
+  background-color: $light-blue;
 }
 
-
 .mat-header-row {
-  background-image: linear-gradient(-200deg, #2196f3, #005cb2);
+  @include gradient-blue();
 }

@@ -1,9 +1,9 @@
 mat-icon, p {
-  color: $gray;
+  color: black;
 }
 
 .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
-  border-color: $purple;
+  border-color: $primary-blue;
 }
 
 td, th {
@@ -11,7 +11,7 @@ td, th {
 }
 
 .mat-radio-button.mat-accent .mat-radio-inner-circle {
-  background-color: $purple;
+  background-color: $primary-blue;
 }
 
 .cdk-header-cell:last-child {

@@ -24,7 +24,7 @@
 }
 
 button {
-  background-color: $gray !important;
+  background-color: $dark-blue !important;
   color: white !important;
 
   mat-icon {
@@ -67,4 +67,11 @@ b {
 
 .mgb {
   margin-bottom: 1rem;
+}
+
+@mixin gradient-blue() {
+  background-image: linear-gradient(-200deg, $primary-blue, $dark-blue);
+}
+@mixin box-shadow() {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.09), 0 3px 14px 3px rgba(0, 0, 0, 0.06);
 }

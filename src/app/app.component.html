@@ -1,9 +1,9 @@
 <div class="container">
   <app-search [isDesktop]="isDesktopDevice" (switchView)="switchView($event)"></app-search>
   <app-spinner [show]="dataSource.loading$"></app-spinner>
-  <app-table *ngIf="isTable" [searchResult]="searchResult"></app-table>
-  <app-card *ngIf="!isTable" [searchResult]="searchResult.items"></app-card>
-  <mat-paginator [length]="searchResult?.total_count"
+  <app-table *ngIf="isTable && isDataLoaded" [searchResult]="searchResult"></app-table>
+  <app-card *ngIf="!isTable && isDataLoaded" [searchResult]="searchResult.items"></app-card>
+  <mat-paginator *ngIf="isDataLoaded" [length]="searchResult?.total_count"
                  (page)="paginate($event)"
                  [pageSize]="this.pageSize"></mat-paginator>
 </div>

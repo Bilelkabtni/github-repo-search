@@ -1,28 +1,28 @@
 .cards {
-  margin-bottom: 15px;
+  margin-bottom: 0.938rem;
 
   &__container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-    gap: 35px;
+    grid-template-columns: repeat(auto-fill, minmax(18.125rem, 1fr));
+    gap: 2.188rem;
     margin-bottom: 3rem;
-    @media (max-width: 800px) {
+    @media (max-width: $mobile-break-point) {
       padding: 0.8rem;
     }
   }
 }
 
 .card {
-  min-width: 290px;
-  min-height: 120px;
+  min-width: 18.125rem;
+  min-height: 7.5rem;
   cursor: pointer;
   background-color: white;
-  box-shadow: 8px 3px 14px 0 rgba(0, 0, 0, .09), 0 8px 10px 1px rgba(0, 0, 0, .09);
+  @include box-shadow();
   margin-bottom: 1rem;
 
   &__title {
-    color: #fff;
-    background-image: linear-gradient(-200deg, #2196f3, #005cb2);
+    color: white;
+    @include gradient-blue();
     padding: 1rem 2rem;
   }
 
