@@ -17,3 +17,13 @@ td, th {
 .cdk-header-cell:last-child {
   text-align: center;
 }
+
+
+input, mat-label {
+  color: white;
+}
+
+::placeholder {
+  color: white !important;
+}
+

@@ -2,7 +2,6 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output}
 import {FormControl} from '@angular/forms';
 import {debounceTime, distinctUntilChanged} from 'rxjs/operators';
 import {GithubService} from '@services/github.service';
-import {View} from '@newTypes/view.type';
 
 @Component({
   selector: 'app-search',
