@@ -6,5 +6,6 @@
   <mat-paginator *ngIf="isDataLoaded" [length]="searchResult?.total_count"
                  (page)="paginate($event)"
                  [pageSize]="this.pageSize"></mat-paginator>
+  <p *ngIf="!isDataLoaded" class="text-center">There is no repositories with your typed search.</p>
 </div>
 
