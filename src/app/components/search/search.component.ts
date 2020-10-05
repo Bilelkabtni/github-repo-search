@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {debounceTime, distinctUntilChanged} from 'rxjs/operators';
 import {GithubService} from '@services/github.service';
@@ -13,6 +13,7 @@ import {View} from '@newTypes/view.type';
 
 
 export class SearchComponent implements OnInit {
+  @Input() isDesktop = false;
   @Output() switchView: EventEmitter<boolean> = new EventEmitter<boolean>();
   tableView = true;
 

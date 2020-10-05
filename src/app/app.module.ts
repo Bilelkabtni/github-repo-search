@@ -16,6 +16,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import {MatSortModule} from '@angular/material/sort';
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { CardComponent } from './components/card/card.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CardComponent } from './components/card/card.component';
         MaterialModule,
         MatProgressSpinnerModule,
         ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
-        MatSortModule
+        MatSortModule,
+        MatTooltipModule
     ],
   providers: [],
   bootstrap: [AppComponent]

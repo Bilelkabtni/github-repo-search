@@ -1,5 +1,10 @@
-<div class="header flex flex--align-center flex--space-between">
-  <mat-icon class="switch" (click)="changeDisplayType()">dashboard</mat-icon>
+<div class="header flex flex--align-center"
+     [ngClass]="(isDesktop)?'flex--space-between':'flex--justify-center'">
+  <mat-icon
+    matTooltip="By clicking to this button the display of the repositories will changed default is table overview"
+    *ngIf="isDesktop"
+    class="switch"
+    (click)="changeDisplayType()">dashboard</mat-icon>
   <mat-form-field>
     <mat-icon class="search-icon" matPrefix>search</mat-icon>
     <mat-label>Search repositories</mat-label>
