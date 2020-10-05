@@ -1,0 +1,35 @@
+.header {
+  color: white;
+  min-height: 1.5rem;
+  background-image: linear-gradient(-200deg, #2196f3, #005cb2);
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.09), 0 3px 14px 3px rgba(0, 0, 0, 0.06);
+  padding: 10px;
+  overflow: hidden;
+  margin: 2rem 0;
+
+  .switch {
+    cursor: pointer;
+  }
+
+  .search-icon {
+    position: relative;
+    top: 5px;
+  }
+
+  input {
+    color: white;
+  }
+
+  button {
+    background-color: white !important;
+    color: black !important;
+    margin-bottom: 5px;
+    mat-icon {
+      color: black !important;
+    }
+  }
+
+  mat-icon {
+    color: white !important;
+  }
+}

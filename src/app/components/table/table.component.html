@@ -1,0 +1,59 @@
+<div class="searchResult">
+  <mat-table class="repo-table mat-elevation-z8" [dataSource]="searchResult.items"
+             matSort
+             matSortActive="seqNo"
+             matSortDirection="asc"
+             matSortDisableClear>
+
+    <ng-container matColumnDef="owner">
+
+      <mat-header-cell *matHeaderCellDef>Owner</mat-header-cell>
+
+      <mat-cell class="duration-cell"
+                *matCellDef="let repo">{{repo.owner.login}}</mat-cell>
+
+    </ng-container>
+
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+      <mat-cell class="flex flex--space-between" *matCellDef="let repo">
+        {{repo.name}}
+        <app-favorite [repoId]="repo.id"></app-favorite>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="language">
+
+      <mat-header-cell *matHeaderCellDef>Language</mat-header-cell>
+
+      <mat-cell class="description-cell"
+                *matCellDef="let repo">{{repo.language}}</mat-cell>
+
+    </ng-container>
+
+    <ng-container matColumnDef="watchers">
+
+      <mat-header-cell *matHeaderCellDef>Watchers</mat-header-cell>
+
+      <mat-cell class="description-cell"
+                *matCellDef="let repo">{{repo.watchers}}</mat-cell>
+
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+
+      <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+
+      <mat-cell class="description"
+                *matCellDef="let repo">{{repo.description}}</mat-cell>
+
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+  </mat-table>
+</div>
+

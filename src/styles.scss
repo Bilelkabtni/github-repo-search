@@ -1,0 +1,28 @@
+@import 'styles/variabels'; // colors variable
+@import 'styles/helpers'; // shared style
+@import 'styles/layouts/material'; // reset mat style
+@import 'styles/layouts/card'; // card design
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: hidden;}
+
+.container {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 100%;
+  padding: 0 2rem;
+  overflow: auto;
+  @media (max-width: 480px) {
+    // padding: 0.8rem !important;
+  }
+}
+
+.mat-table {
+  background-color: #deeffd;
+}
+
+
+.mat-header-row {
+  background-image: linear-gradient(-200deg, #2196f3, #005cb2);
+}

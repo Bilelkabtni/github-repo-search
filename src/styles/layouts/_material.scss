@@ -1,0 +1,19 @@
+mat-icon, p {
+  color: $gray;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: $purple;
+}
+
+td, th {
+  padding-top: 10px !important;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: $purple;
+}
+
+.cdk-header-cell:last-child {
+  text-align: center;
+}

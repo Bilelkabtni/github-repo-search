@@ -1,0 +1,10 @@
+<div class="container">
+  <app-search (switchView)="switchView($event)"></app-search>
+  <app-spinner [show]="dataSource.loading$"></app-spinner>
+  <app-table *ngIf="isTable" [searchResult]="searchResult"></app-table>
+  <app-card *ngIf="!isTable" [searchResult]="searchResult.items"></app-card>
+  <mat-paginator [length]="searchResult?.total_count"
+                 (page)="paginate($event)"
+                 [pageSize]="this.pageSize"></mat-paginator>
+</div>
+

@@ -1,0 +1,21 @@
+<div class="cards__container">
+  <div class="card" *ngFor="let item of searchResult">
+    <div class="flex flex--column">
+      <p class="card__title flex flex--space-between">{{item.owner.login}}
+        <app-favorite [repoId]="item.id"></app-favorite>
+      </p>
+      <div class="card__content">
+        <p class="flex flex--align-center">
+          <mat-icon>update</mat-icon>
+          <b>Name </b>
+          <span class="p-l-1">{{item.name}}</span>
+        </p>
+        <p class="flex flex--align-center">
+          <mat-icon>radio_button_checked</mat-icon>
+          <b>watchers: </b>
+          <span class="p-l-1">{{item.watchers}}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
