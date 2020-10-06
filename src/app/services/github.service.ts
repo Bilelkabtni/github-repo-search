@@ -22,7 +22,7 @@ export class GithubService {
   }
 
   // return stored favorites and convert them to integer
-  get favoriteFromStorage(): Items[] {
+  get getCachedFavorites(): Items[] {
     return JSON.parse(localStorage.getItem('favRepo')) || [];
   }
 

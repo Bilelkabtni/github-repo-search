@@ -23,6 +23,15 @@ input, mat-label {
   color: white;
 }
 
+.mat-table {
+  background-color: $light-blue;
+}
+
+.mat-header-row {
+  @include gradient-dark();
+}
+
+
 ::placeholder {
   color: white !important;
 }

@@ -33,8 +33,8 @@ export class AppComponent implements OnInit {
     return this.searchResult?.totalCount;
   }
 
-  get cachedFavoriteRepos(): Items[] {
-    return this.githubService.favoriteFromStorage.filter(item => item.name.includes(this.query));
+  get getCachedFavorites(): Items[] {
+    return this.githubService.getCachedFavorites.filter(item => item.name.includes(this.query));
   }
 
   constructor(private swUpdate: SwUpdate,
@@ -69,9 +69,8 @@ export class AppComponent implements OnInit {
     this.dataSource.searchSubject.subscribe(data => {
       // in case of there is no coming data for offline reason  the search will look into the cached repos
       if (data.length === 0 && !window.navigator.onLine) {
-        console.log('no data');
         this.searchResult = new GithubSearch({
-          items: this.cachedFavoriteRepos,
+          items: this.getCachedFavorites,
           incompleteResults: false,
           totalCount: this.totalCount,
         });
