@@ -29,10 +29,11 @@ export class GithubSearchDataSourceService implements DataSource<GithubSearch> {
       pageIndex,
       pageSize
     ).pipe(
-      shareReplay(1),
+      // shareReplay(1),
       catchError(() => of([])),
       finalize(() => this.loadingSubject.next(false))
     ).subscribe(search => {
+        console.log('search search', search);
         return this.searchSubject.next(search);
       });
   }

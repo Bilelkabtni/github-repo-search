@@ -62,32 +62,34 @@ export class AppComponent implements OnInit {
     }
   }
 
-
   ngOnInit(): void {
     this.dataSource = new GithubSearchDataSourceService(this.githubService);
 
     this.dataSource.searchSubject.subscribe(data => {
-      // in case of there is no coming data for offline reason  the search will look into the cached repos
-      if (data.length === 0 && !window.navigator.onLine) {
-        this.searchResult = new GithubSearch({
+      this.searchResult = new GithubSearch(data);
+      // if there is no search result look into the cache
+      console.log('this.searchResult aaccc', this.searchResult);
+      if (this.searchResult.items === null) {
+        this.searchResult = new  GithubSearch({
           items: this.getCachedFavorites,
           incompleteResults: false,
           totalCount: this.totalCount,
         });
-        return;
+        console.log('this.searchResult data', this.searchResult);
+        console.log('this.searchResult getCachedFavorites', this.getCachedFavorites);
       }
-      this.searchResult = new GithubSearch(data);
     });
 
     this.githubService.searchEvent.subscribe(query => {
+      this.pageIndex = 0;
       if (query) {
+        console.log(1111111);
         this.query = query;
         this.loadSearchedRepos();
-        this.pageIndex = 0;
-        return;
+      } else  {
+        this.searchResult = new GithubSearch();
+        console.log(22222, this.searchResult)
       }
-      this.searchResult = new GithubSearch();
-      this.pageIndex = 0;
     });
   }
 

@@ -3,7 +3,7 @@ import {Items} from '@interfaces/items.interface';
 export class GithubSearch {
   public totalCount: number;
   public incompleteResults: number;
-  public items: Items[];
+  public items: (Items | Items[])[];
 
   constructor(data: any = {}) {
     const {
