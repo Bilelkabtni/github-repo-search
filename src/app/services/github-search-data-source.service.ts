@@ -1,6 +1,6 @@
 import {CollectionViewer, DataSource} from '@angular/cdk/collections';
 import {BehaviorSubject, Observable, of} from 'rxjs';
-import {catchError, finalize} from 'rxjs/operators';
+import {catchError, finalize, shareReplay} from 'rxjs/operators';
 import {GithubService} from './github.service';
 import {GithubSearch} from '@models/githubSearch.model';
 
@@ -14,7 +14,6 @@ export class GithubSearchDataSourceService implements DataSource<GithubSearch> {
   public loading$ = this.loadingSubject.asObservable();
 
   constructor(private githubService: GithubService) {
-
   }
 
   loadSearch(query: string,
@@ -30,11 +29,10 @@ export class GithubSearchDataSourceService implements DataSource<GithubSearch> {
       pageIndex,
       pageSize
     ).pipe(
+      shareReplay(1),
       catchError(() => of([])),
       finalize(() => this.loadingSubject.next(false))
-    )
-      .subscribe(search => {
-        // @ts-ignore
+    ).subscribe(search => {
         return this.searchSubject.next(search);
       });
   }

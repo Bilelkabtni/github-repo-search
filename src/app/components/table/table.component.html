@@ -5,6 +5,14 @@
              matSortDirection="asc"
              matSortDisableClear>
 
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+      <mat-cell class="flex flex--space-between" *matCellDef="let repo">
+        {{repo.name}}
+        <app-favorite [repoId]="repo.id"></app-favorite>
+      </mat-cell>
+    </ng-container>
+
     <ng-container matColumnDef="owner">
 
       <mat-header-cell *matHeaderCellDef>Owner</mat-header-cell>
@@ -12,14 +20,6 @@
       <mat-cell class="duration-cell"
                 *matCellDef="let repo">{{repo.owner.login}}</mat-cell>
 
-    </ng-container>
-
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
-      <mat-cell class="flex flex--space-between" *matCellDef="let repo">
-        {{repo.name}}
-        <app-favorite [repoId]="repo.id"></app-favorite>
-        </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="language">

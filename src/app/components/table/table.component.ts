@@ -16,5 +16,5 @@ export class TableComponent  {
 
   @ViewChild(MatSort) sort: MatSort;
 
-  displayedColumns = ['owner', 'name', 'language', 'watchers', 'description'];
+  displayedColumns = ['name', 'owner', 'language', 'watchers', 'description'];
 }

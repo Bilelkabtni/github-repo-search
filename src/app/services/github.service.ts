@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {GithubSearch} from '@models/githubSearch.model';
-import {map, shareReplay} from 'rxjs/operators';
+import {map, shareReplay, tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -21,13 +21,11 @@ export class GithubService {
   }
 
   searchByQuery(
-    query: string = 'todo',
+    query: string,
     sortOrder = 'asc',
     pageNumber = 0,
-    pageSize = 3): Observable<GithubSearch> {
-
-    // @ts-ignore
-    return this.http.get(this.url + '/search/repositories', {
+    pageSize = 3): Observable<GithubSearch[]> {
+    return this.http.get<GithubSearch[]>(this.url + '/search/repositories', {
       params: new HttpParams()
         .set('q', query.toString())
         .set('order', sortOrder)
@@ -35,7 +33,8 @@ export class GithubService {
         .set('per_page', pageSize.toString())
     }).pipe(
       map(res => res),
-      shareReplay(1)
+      shareReplay(1),
+      tap(() => console.log('after sharing'))
     );
   }
 }

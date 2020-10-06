@@ -37,7 +37,6 @@ export class AppComponent implements OnInit {
 
 
   displayOnDeviceView(): void {
-    console.log(this.isDesktopDevice);
     this.isTable = this.isDesktopDevice;
   }
 

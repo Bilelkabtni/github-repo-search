@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:prod": "ng build --prod && cd dist && cd githubSearch && http-server -c-1 --proxy http://localhost:9000",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

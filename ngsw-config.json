@@ -4,7 +4,9 @@
   "dataGroups": [{
     "name": "api-performance",
     "urls": [
-      "https://api.github.com/**"
+      "https://api.github.com/**",
+      "https://fonts.googleapis.com/**",
+      "https://fonts.gstatic.com/**"
     ],
     "cacheConfig": {
       "strategy": "performance",
@@ -13,12 +15,24 @@
     }
   },
     {
-      "name": "api-freshness",
+      "name": "api-performance",
       "urls": [
-        "https://api.github.com/search/repositories"
+        "https://api.github.com/search/**"
       ],
       "cacheConfig": {
-        "strategy": "freshness",
+        "strategy": "performance",
+        "maxSize": 100,
+        "maxAge": "3d",
+        "timeout": "10s"
+      }
+    },
+    {
+      "name": "api-performance",
+      "urls": [
+        "https://api.github.com/search/repositories?**"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
         "maxSize": 100,
         "maxAge": "3d",
         "timeout": "10s"
