@@ -22,7 +22,7 @@
 
   &__title {
     color: white;
-    @include gradient-dark();
+    background-color: $dark-blue;
     padding: 1rem 0 1rem 2rem;
   }
 
