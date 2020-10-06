@@ -1,5 +1,8 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {Favorite} from '@newTypes/favorite.type';
+import {GithubSearch} from '@models/githubSearch.model';
+import {Items} from '@interfaces/items.interface';
+import {GithubService} from '@services/github.service';
 
 @Component({
   selector: 'app-favorite',
@@ -8,31 +11,27 @@ import {Favorite} from '@newTypes/favorite.type';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FavoriteComponent implements OnInit {
-  @Input() repoId: number;
-  favorite: number[] = [];
+  @Input() repo: Items;
+  favorite: Items[] = [];
 
-  // return stored favorites and convert them to integer
-  get favoriteFromStorage(): number[] {
-    return localStorage.getItem('favRepo')?.split(',')
-      .map(id => +id) || [];
+  constructor(private githubService: GithubService) {
   }
 
   addToFavorite(): void {
-    if (!this.favorite.includes(this.repoId)) {
-      this.favorite = [...this.favoriteFromStorage, this.repoId];
-      localStorage.setItem('favRepo', this.favorite.toString());
+    if (!this.favorite.includes(this.repo)) {
+      this.favorite = [...this.githubService.favoriteFromStorage, this.repo];
+      localStorage.setItem('favRepo', JSON.stringify(this.favorite));
     } else {
-      this.favorite = this.favoriteFromStorage.filter(item => item !== this.repoId);
-      localStorage.setItem('favRepo', this.favorite.toString());
+      this.favorite = this.favorite.filter(item => item !== this.repo);
     }
   }
 
   getFavoriteIcon(): Favorite {
-    return this.favorite.includes(this.repoId) ? 'favorite' : 'favorite_border';
+    return this.favorite.some(item => item.id === this.repo.id) ? 'favorite' : 'favorite_border';
   }
 
   ngOnInit(): void {
-    this.favorite = this.favoriteFromStorage;
+    this.favorite = this.githubService.favoriteFromStorage;
   }
 
 }

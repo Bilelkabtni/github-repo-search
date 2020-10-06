@@ -3,6 +3,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {GithubSearch} from '@models/githubSearch.model';
 import {map, shareReplay, tap} from 'rxjs/operators';
+import {Items} from '@interfaces/items.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,11 @@ export class GithubService {
 
   changeQuery(searchText: string): void {
     this.query$.next(searchText);
+  }
+
+  // return stored favorites and convert them to integer
+  get favoriteFromStorage(): Items[] {
+    return JSON.parse(localStorage.getItem('favRepo')) || [];
   }
 
   searchByQuery(

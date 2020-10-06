@@ -4,6 +4,7 @@ import {GithubSearchDataSourceService} from '@services/github-search-data-source
 import {GithubSearch} from '@models/githubSearch.model';
 import {GithubService} from '@services/github.service';
 import {DeviceDetectorService} from 'ngx-device-detector';
+import {Items} from '@interfaces/items.interface';
 
 @Component({
   selector: 'app-root',
@@ -28,11 +29,19 @@ export class AppComponent implements OnInit {
     return this.searchResult?.items?.length > 0;
   }
 
+  get totalCount(): number {
+    return this.searchResult?.totalCount;
+  }
+
+  get cachedFavoriteRepos(): Items[] {
+    return this.githubService.favoriteFromStorage.filter(item => item.name.includes(this.query));
+  }
+
   constructor(private swUpdate: SwUpdate,
               private deviceService: DeviceDetectorService,
               private githubService: GithubService) {
-        this.updateSw();
-        this.displayOnDeviceView();
+    this.updateSw();
+    this.displayOnDeviceView();
   }
 
 
@@ -50,10 +59,21 @@ export class AppComponent implements OnInit {
     }
   }
 
+
   ngOnInit(): void {
     this.dataSource = new GithubSearchDataSourceService(this.githubService);
 
     this.dataSource.searchSubject.subscribe(data => {
+      // in case of there is no coming data for offline reason  the search will look into the cached repos
+      if (data.length === 0 && !window.navigator.onLine) {
+        console.log('no data');
+        this.searchResult = new GithubSearch({
+          items: this.cachedFavoriteRepos,
+          incompleteResults: false,
+          totalCount: this.totalCount,
+        });
+        return;
+      }
       this.searchResult = new GithubSearch(data);
     });
 
@@ -62,10 +82,10 @@ export class AppComponent implements OnInit {
         this.query = query;
         this.loadSearchedRepos();
         this.pageIndex = 0;
-      } else {
-        this.searchResult = new GithubSearch();
-        this.pageIndex = 0;
+        return;
       }
+      this.searchResult = new GithubSearch();
+      this.pageIndex = 0;
     });
   }
 
@@ -76,6 +96,7 @@ export class AppComponent implements OnInit {
   paginate(data): void {
     this.pageIndex = data.pageIndex;
     this.pageSize = data.pageSize;
+    // this.searchResult = new GithubSearch();
     this.loadSearchedRepos();
   }
 

@@ -2,23 +2,23 @@
   <div class="card" *ngFor="let item of searchResult">
     <div class="flex flex--column">
       <p class="card__title flex flex--space-between">{{item.owner.login}}
-        <app-favorite [repoId]="item.id"></app-favorite>
+        <app-favorite [repo]="item"></app-favorite>
       </p>
       <div class="card__content">
         <p class="flex flex--align-center">
           <mat-icon>account_circle</mat-icon>
-          <b>Name </b>
-          <span class="p-l-1">{{item.name}}</span>
+          <b>Name: </b>
+          <span class="p-l-2">{{item.name}}</span>
         </p>
         <p class="flex flex--align-center">
           <mat-icon>visibility</mat-icon>
           <b>watchers: </b>
-          <span class="p-l-1">{{item.watchers}}</span>
+          <span class="p-l-2">{{item.watchers}}</span>
         </p>
         <p class="flex flex--align-center">
           <mat-icon>code</mat-icon>
           <b>Language: </b>
-          <span class="p-l-1">{{item.language}}</span>
+          <span class="p-l-2">{{item.language}}</span>
         </p>
       </div>
     </div>

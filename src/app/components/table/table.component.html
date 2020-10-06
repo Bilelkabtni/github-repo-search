@@ -9,7 +9,7 @@
       <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
       <mat-cell class="flex flex--space-between" *matCellDef="let repo">
         {{repo.name}}
-        <app-favorite [repoId]="repo.id"></app-favorite>
+        <app-favorite [repo]="repo"></app-favorite>
       </mat-cell>
     </ng-container>
 

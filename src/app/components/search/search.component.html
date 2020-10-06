@@ -5,12 +5,11 @@
     *ngIf="isDesktop"
     class="switch"
     (click)="changeDisplayType()">dashboard</mat-icon>
-  <mat-form-field>
+  <mat-form-field class="search-container">
     <mat-icon class="search-icon" matPrefix>search</mat-icon>
     <mat-label>Search repositories</mat-label>
     <input matInput type="text"
            name="search-field"
-           placeholder="Search repositories"
            [formControl]="searchFormControl"/>
     <button
       (click)="resetSearch()"
