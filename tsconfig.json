@@ -4,7 +4,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    "sourceMap": true,
+    "sourceMap": false,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
@@ -29,8 +29,8 @@
       "@interfaces/*": [
         "src/app/interfaces/*"
       ],
-      "@newTypes/*": [
-        "src/app/newTypes/*"
+      "@customTypes/*": [
+        "src/app/customTypes/*"
       ],
       "@models/*": [
         "src/app/models/*"

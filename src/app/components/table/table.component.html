@@ -1,12 +1,10 @@
 <div class="searchResult">
-  <mat-table class="repo-table mat-elevation-z8" [dataSource]="searchResult.items"
-             matSort
-             matSortActive="seqNo"
-             matSortDirection="asc"
+  <mat-table class="repo-table mat-elevation-z8"
+             [dataSource]="searchResult.items"
              matSortDisableClear>
 
     <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
       <mat-cell class="flex flex--space-between" *matCellDef="let repo">
         {{repo.name}}
         <app-favorite [repo]="repo"></app-favorite>

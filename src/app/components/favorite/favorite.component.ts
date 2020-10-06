@@ -1,6 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
-import {Favorite} from '@newTypes/favorite.type';
-import {GithubSearch} from '@models/githubSearch.model';
+import {Favorite} from '@customTypes/favorite.type';
 import {Items} from '@interfaces/items.interface';
 import {GithubService} from '@services/github.service';
 
@@ -14,15 +13,26 @@ export class FavoriteComponent implements OnInit {
   @Input() repo: Items;
   favorite: Items[] = [];
 
+  get favoriteFromStorage(): Items[] {
+    return this.githubService.favoriteFromStorage;
+  }
+
+  get isCached(): boolean {
+    return this.favorite.some((item) => {
+      return item.id === this.repo.id;
+    });
+  }
+
   constructor(private githubService: GithubService) {
   }
 
   addToFavorite(): void {
-    if (!this.favorite.includes(this.repo)) {
-      this.favorite = [...this.githubService.favoriteFromStorage, this.repo];
+    if (!this.isCached) {
+      this.favorite = [...this.favoriteFromStorage, this.repo];
       localStorage.setItem('favRepo', JSON.stringify(this.favorite));
     } else {
-      this.favorite = this.favorite.filter(item => item !== this.repo);
+      this.favorite = this.favoriteFromStorage.filter(item => item.id !== this.repo.id);
+      localStorage.setItem('favRepo', JSON.stringify(this.favorite));
     }
   }
 

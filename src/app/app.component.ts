@@ -45,10 +45,13 @@ export class AppComponent implements OnInit {
   }
 
 
+  // switch display overview between card view or table view
+  // on mobile display only card view
   displayOnDeviceView(): void {
     this.isTable = this.isDesktopDevice;
   }
 
+  // update service worker
   private updateSw(): void {
     if (this.swUpdate.isEnabled) {
       this.swUpdate.available.subscribe(() => {
@@ -96,7 +99,6 @@ export class AppComponent implements OnInit {
   paginate(data): void {
     this.pageIndex = data.pageIndex;
     this.pageSize = data.pageSize;
-    // this.searchResult = new GithubSearch();
     this.loadSearchedRepos();
   }
 
