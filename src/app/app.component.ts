@@ -80,16 +80,15 @@ export class AppComponent implements OnInit {
 
   private getSearchedResult(): void {
     this.dataSource.searchSubject.subscribe(data => {
-      // in case of there is no coming data for offline reason the search will look into the cached repos
-      if (data.length === 0 && !window.navigator.onLine) {
-        this.searchResult = new GithubSearch({
+      this.searchResult = new GithubSearch(data);
+      // if there is no search result look into the cache
+      if (this.searchResult.items === null) {
+        this.searchResult = new  GithubSearch({
           items: this.getCachedFavorites,
           incompleteResults: false,
           totalCount: this.totalCount,
         });
-        return;
       }
-      this.searchResult = new GithubSearch(data);
     });
   }
 
