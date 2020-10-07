@@ -1,11 +1,17 @@
 <div class="container my-alternate-theme">
+<!--  search components-->
   <app-search [isDesktop]="isDesktopDevice" (switchView)="switchView($event)"></app-search>
+  <!--  spinner components-->
   <app-spinner [show]="dataSource.loading$"></app-spinner>
+  <!--  table components on desktop view only-->
   <app-table *ngIf="isTable && isDataLoaded" [searchResult]="searchResult"></app-table>
+  <!--  card components-->
   <app-card *ngIf="!isTable && isDataLoaded" [searchResult]="searchResult.items"></app-card>
-  <mat-paginator *ngIf="isDataLoaded" [length]="totalCount"
+  <!--  paginator components-->
+  <mat-paginator *ngIf="isDataLoaded"
+                 [length]="totalCount"
                  (page)="paginate($event)"
                  [pageSize]="this.pageSize"></mat-paginator>
-  <p *ngIf="!isDataLoaded" class="text-center empty-data">There is no repositories with your typed search.</p>
+  <p *ngIf="!isDataLoaded" class="text-center empty-data">There are no repositories with your typed search.</p>
 </div>
 

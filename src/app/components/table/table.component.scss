@@ -1,9 +1,12 @@
-.mat-header-cell {
-  text-align: center;
-  color: white;
+.searchResult {
+  .mat-header-cell {
+    text-align: center;
+    color: white;
+  }
+
+  mat-icon {
+    color: white;
+    padding-right: 0.2rem;
+  }
 }
 
-mat-icon {
-  color: white;
-  padding-right: 0.2rem;
-}

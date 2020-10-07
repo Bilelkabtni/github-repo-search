@@ -10,23 +10,25 @@
       padding: 0.8rem;
     }
   }
+
+  .card {
+    min-width: 18.125rem;
+    min-height: 7.5rem;
+    cursor: pointer;
+    background-color: white;
+    @include box-shadow();
+    margin-bottom: 1rem;
+
+    &__title {
+      color: white;
+      background-color: $dark-blue;
+      padding: 1rem 0 1rem 2rem;
+    }
+
+    &__content {
+      padding: 1rem;
+    }
+  }
 }
 
-.card {
-  min-width: 18.125rem;
-  min-height: 7.5rem;
-  cursor: pointer;
-  background-color: white;
-  @include box-shadow();
-  margin-bottom: 1rem;
 
-  &__title {
-    color: white;
-    background-color: $dark-blue;
-    padding: 1rem 0 1rem 2rem;
-  }
-
-  &__content {
-    padding: 1rem;
-  }
-}

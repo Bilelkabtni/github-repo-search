@@ -10,7 +10,6 @@ import {GithubService} from '@services/github.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-
 export class SearchComponent implements OnInit {
   @Input() isDesktop = false;
   @Output() switchView: EventEmitter<boolean> = new EventEmitter<boolean>();
