@@ -33,7 +33,6 @@ export class GithubSearchDataSourceService implements DataSource<GithubSearch> {
       catchError(() => of([])),
       finalize(() => this.loadingSubject.next(false))
     ).subscribe(search => {
-        console.log('search search', search);
         return this.searchSubject.next(search);
       });
   }

@@ -40,7 +40,6 @@ export class GithubService {
     }).pipe(
       map(res => res),
       shareReplay(1),
-      tap(() => console.log('after sharing'))
     );
   }
 }
