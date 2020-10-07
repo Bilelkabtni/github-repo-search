@@ -3,7 +3,6 @@
 @import 'styles/layouts/material'; // reset mat style
 @import 'styles/layouts/card'; // card design
 
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: hidden;}
 
@@ -18,3 +17,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: h
      padding: 0 !important;
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
