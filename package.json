@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "start:prod": "ng build --prod && cd dist && cd githubSearch && http-server",
-    "int-test": "start-server-and-test next http://localhost:4200 cypress-run",
+    "int-test": "cypress-run",
     "cypress:install": "cypress cache clear && cypress install",
     "cypress:open": "cypress open",
     "build": "ng build",
@@ -29,7 +29,6 @@
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2",
-    "next": "^9.3.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1001.4",
