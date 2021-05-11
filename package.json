@@ -8,7 +8,7 @@
     "cypress:install": "cypress cache clear && cypress install",
     "test:chrome": "cypress run --browser chrome",
     "report:merge": "mochawesome-merge cypress/results/json/*.json > index.json",
-    "report:generate": "marge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html"},
+    "report:generate": "marge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html",
     "cypress:open": "cypress open",
     "build": "ng build",
     "test": "cypress run",
