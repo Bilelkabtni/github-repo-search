@@ -17,6 +17,7 @@ jobs:
         run: |
           npm i fsevents@2.3 -f --save-optional
           npm i -f --no-optional
+          npm audit fix --force
           $(npm bin)/cypress cache path
           $(npm bin)/cypress cache list
           $(npm bin)/cypress verify
