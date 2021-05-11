@@ -6,7 +6,7 @@
     "start": "ng serve",
     "start:prod": "ng build --prod && cd dist && cd githubSearch && http-server",
     "cypress:install": "cypress cache clear && cypress install",
-    "test:chrome": "cypress run --browser chrome",
+    "test:chrome": "npm run start & sleep 18 && cypress run --browser chrome",
     "report:merge": "mochawesome-merge cypress/results/json/*.json > index.json",
     "report:generate": "marge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html",
     "cypress:open": "cypress open",
