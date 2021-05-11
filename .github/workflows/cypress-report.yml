@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install a project with a clean slate
         run: |
+          npm config set ignore-optional true
           npm ci
           $(npm bin)/cypress cache path
           $(npm bin)/cypress cache list
