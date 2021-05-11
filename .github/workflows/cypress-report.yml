@@ -10,6 +10,9 @@ jobs:
     container: cypress/browsers:node12.18.3-chrome87-ff82
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+            node-version: '12'
       - name: Install a project with a clean slate
         run: |
           npm ci --no-optional
