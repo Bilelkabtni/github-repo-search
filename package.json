@@ -11,7 +11,7 @@
     "report:generate": "marge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html"},
     "cypress:open": "cypress open",
     "build": "ng build",
-    "test": "ng test",
+    "test": "cypress run",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
