@@ -1,1 +1,15 @@
-{}
+{
+  "projectId": "githubReposSearch",
+  "viewportHeight": 1024,
+  "viewportWidth": 1280,
+  "videoCompression": 28,
+  "pageLoadTimeout": 300000,
+  "requestTimeout": 30000,
+  "responseTimeout": 30000,
+  "defaultCommandTimeout": 20000,
+  "chromeWebSecurity": false,
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+      "configFile": "reporter-config.json"
+  }
+}
