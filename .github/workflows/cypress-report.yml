@@ -15,8 +15,14 @@ jobs:
             node-version: '12'
       - name: Install a project with a clean slate
         run: |
-          npm install -g npm@latest
+          if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+            npm uninstall fsevents
+          else
+              npm install
+          fi
+          npm install -g npm@6.14.12
           npm ci --no-optional
+          npm audit fix --force
           $(npm bin)/cypress cache path
           $(npm bin)/cypress cache list
           $(npm bin)/cypress verify
