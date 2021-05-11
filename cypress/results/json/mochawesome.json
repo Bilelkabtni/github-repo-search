@@ -1,0 +1,152 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2021-05-11T20:58:14.483Z",
+    "end": "2021-05-11T20:58:16.089Z",
+    "duration": 1606,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "15ec4628-b627-4e87-bd45-77df8c8f87bd",
+      "title": "",
+      "fullFile": "cypress/integration/github-search.ts",
+      "file": "cypress/integration/github-search.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b647bc10-6b38-4b93-a308-adf81d51f287",
+          "title": "GithubSearch",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "c190be52-7dfb-43bf-bd61-fc93da5f6f31",
+              "title": "search",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should search for a given repos [table view]",
+                  "fullTitle": "GithubSearch search should search for a given repos [table view]",
+                  "timedOut": null,
+                  "duration": 786,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "\"videos/github-search.ts.mp4\"",
+                  "code": "testSearchResult('searchResult');",
+                  "err": {
+                    "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:4200/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:4200\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer",
+                    "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:4200/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:4200\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at http://localhost:52622/__cypress/runner/cypress_runner.js:138876:23\n    at visitFailedByErr (http://localhost:52622/__cypress/runner/cypress_runner.js:138235:12)\n    at http://localhost:52622/__cypress/runner/cypress_runner.js:138875:11\n    at tryCatcher (http://localhost:52622/__cypress/runner/cypress_runner.js:10791:23)\n    at Promise._settlePromiseFromHandler (http://localhost:52622/__cypress/runner/cypress_runner.js:8726:31)\n    at Promise._settlePromise (http://localhost:52622/__cypress/runner/cypress_runner.js:8783:18)\n    at Promise._settlePromise0 (http://localhost:52622/__cypress/runner/cypress_runner.js:8828:10)\n    at Promise._settlePromises (http://localhost:52622/__cypress/runner/cypress_runner.js:8904:18)\n    at _drainQueueStep (http://localhost:52622/__cypress/runner/cypress_runner.js:5498:12)\n    at _drainQueue (http://localhost:52622/__cypress/runner/cypress_runner.js:5491:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:52622/__cypress/runner/cypress_runner.js:5507:5)\n    at Async.drainQueues (http://localhost:52622/__cypress/runner/cypress_runner.js:5377:14)\nFrom Your Spec Code:\n    at testSearchResult (http://localhost:52622/__cypress/tests?p=cypress/integration/github-search.ts:107:12)\n    at Context.eval (http://localhost:52622/__cypress/tests?p=cypress/integration/github-search.ts:129:13)\n\nFrom Node.js Internals:\n  Error: connect ECONNREFUSED 127.0.0.1:4200\n      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16)\n  ",
+                    "diff": null
+                  },
+                  "uuid": "6f70b104-563d-4022-a7e0-11d6d913417a",
+                  "parentUUID": "c190be52-7dfb-43bf-bd61-fc93da5f6f31",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should search for a given repos [card view]",
+                  "fullTitle": "GithubSearch search should search for a given repos [card view]",
+                  "timedOut": null,
+                  "duration": 754,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "\"videos/github-search.ts.mp4\"",
+                  "code": "testSearchResult('cards__container', true);",
+                  "err": {
+                    "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:4200/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:4200\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer",
+                    "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:4200/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:4200\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at http://localhost:52622/__cypress/runner/cypress_runner.js:138876:23\n    at visitFailedByErr (http://localhost:52622/__cypress/runner/cypress_runner.js:138235:12)\n    at http://localhost:52622/__cypress/runner/cypress_runner.js:138875:11\n    at tryCatcher (http://localhost:52622/__cypress/runner/cypress_runner.js:10791:23)\n    at Promise._settlePromiseFromHandler (http://localhost:52622/__cypress/runner/cypress_runner.js:8726:31)\n    at Promise._settlePromise (http://localhost:52622/__cypress/runner/cypress_runner.js:8783:18)\n    at Promise._settlePromise0 (http://localhost:52622/__cypress/runner/cypress_runner.js:8828:10)\n    at Promise._settlePromises (http://localhost:52622/__cypress/runner/cypress_runner.js:8904:18)\n    at _drainQueueStep (http://localhost:52622/__cypress/runner/cypress_runner.js:5498:12)\n    at _drainQueue (http://localhost:52622/__cypress/runner/cypress_runner.js:5491:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:52622/__cypress/runner/cypress_runner.js:5507:5)\n    at Async.drainQueues (http://localhost:52622/__cypress/runner/cypress_runner.js:5377:14)\nFrom Your Spec Code:\n    at testSearchResult (http://localhost:52622/__cypress/tests?p=cypress/integration/github-search.ts:107:12)\n    at Context.eval (http://localhost:52622/__cypress/tests?p=cypress/integration/github-search.ts:132:13)\n\nFrom Node.js Internals:\n  Error: connect ECONNREFUSED 127.0.0.1:4200\n      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16)\n  ",
+                    "diff": null
+                  },
+                  "uuid": "3cc38a17-6122-42c8-a9c1-517d98086bda",
+                  "parentUUID": "c190be52-7dfb-43bf-bd61-fc93da5f6f31",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "6f70b104-563d-4022-a7e0-11d6d913417a",
+                "3cc38a17-6122-42c8-a9c1-517d98086bda"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 1540,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/json",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
