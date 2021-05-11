@@ -15,7 +15,7 @@ jobs:
             node-version: '14.16.0'
       - name: Install a project with a clean slate
         run: |
-          npm install fsevents@latest -D
+          npm install fsevents@2.1.2
           npm i -f --no-optional
           npm i fsevents@latest -f --save-optional
           $(npm bin)/cypress cache path
