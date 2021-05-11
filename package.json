@@ -15,7 +15,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "optionalDependencies": {},
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.1.4",
