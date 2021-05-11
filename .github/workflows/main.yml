@@ -1,2 +1,0 @@
-name: Nodjs
-uses: actions/setup-node@v2.1.5
