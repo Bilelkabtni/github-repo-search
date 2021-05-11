@@ -15,9 +15,8 @@ jobs:
             node-version: '14.16.0'
       - name: Install a project with a clean slate
         run: |
-          npm i fsevents@2.3 -f --save-optional
+          npm i -g fsevents@2.3
           npm i -f --no-optional
-          npm audit fix --force
           $(npm bin)/cypress cache path
           $(npm bin)/cypress cache list
           $(npm bin)/cypress verify
