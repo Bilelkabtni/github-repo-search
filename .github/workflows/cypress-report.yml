@@ -15,7 +15,7 @@ jobs:
             node-version: '14.16.0'
       - name: Install a project with a clean slate
         run: |
-          npm install -g @angular/cli@latest
+          npm install fsevents@latest -D
           npm i -f --no-optional
           npm i fsevents@latest -f --save-optional
           $(npm bin)/cypress cache path
