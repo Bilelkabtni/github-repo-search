@@ -13,6 +13,7 @@ jobs:
       - name: Install a project with a clean slate
         run: |
           npm install -f --no-optional
+          npm audit fix
           $(npm bin)/cypress cache path
           $(npm bin)/cypress cache list
           $(npm bin)/cyp‚ress verify
