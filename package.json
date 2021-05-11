@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "start:prod": "ng build --prod && cd dist && cd githubSearch && http-server",
-    "int-test": "cypress-run",
+    "test:chrome": "cypress run --browser chrome",
     "cypress:install": "cypress cache clear && cypress install",
     "cypress:open": "cypress open",
     "build": "ng build",
@@ -28,7 +28,11 @@
     "@angular/service-worker": "~10.1.4",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "mochawesome-report-generator": "^5.2.0"
+  },
+    "peerDependencies": {
+    "mocha": ">=7"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1001.4",
@@ -50,6 +54,8 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.2",
-    "start-server-and-test": "^1.11.6"
+    "start-server-and-test": "^1.11.6",
+    "mocha": "^8.3.0",
+    "cypress-multi-reporters": "^1.5.0"
   }
 }
